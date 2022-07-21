@@ -12,12 +12,17 @@ sizePicker.addEventListener("submit", function (event) {
 // When size is submitted by the user, call makeGrid()
 
 function makeGrid() {
-  let height = document.getElementById("inputHeight").value;
-  let width = document.getElementById("inputWidth").value;
-   
-  for (var v = 0; v < height; v++) {
+
+  //clears grid
+  const table = document.getElementById("pixelCanvas");
+  table.innerHTML = "";
+
+  const height = document.getElementById("inputHeight").value;
+  const width = document.getElementById("inputWidth").value;
+
+  for (let v = 0; v < height; v++) {
     tr = document.createElement("tr");
-    for (var t = 0; t < width; t++) {
+    for (let t = 0; t < width; t++) {
       td = document.createElement("td");
       tr.insertAdjacentElement("afterbegin", td);
       td.addEventListener("click", function (event) {
